@@ -1,7 +1,10 @@
 # whydonate-test
 
-Basic CRUD Operations done on Table Generated using Database.
+## Description
+- Given code snippet shows the basic CRUD operations done using PHP REST Backend
+- The front end is developed using AngularJS and Bootstrap Libraries
 
-PHP REST Interface developed to perform the operations on Backend.
-
-AngularJS And Bootstrap Framework been used to handle the Front end and UI.
+## Prerequisites
+- Bootstrap (Css/JS Bundles)
+  - [Boostrap CDN](https://www.bootstrapcdn.com/)
+- [MySQL Server](https://www.mysql.com/downloads/)
