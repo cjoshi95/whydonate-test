@@ -1,9 +1,21 @@
 <?php
 include_once 'inc/dbconnect.php';
 $db = new DbConnect();
+
+/*
+ * GET request for fetching all or specific User's Data *
+ */
 if ($_SERVER['REQUEST_METHOD'] == "GET")
 {
 
+    /*
+     * @param UserID - user's serial number
+     * @param fetch - true to fetch data of User of @UserID
+     * @param del - true to delete information of @UserID
+     *
+     * Empty Parameters will return all user's info
+     *
+     */
     if (isset($_GET['id']) && isset($_GET['fetch']))
     {
         $srno = $_GET['id'];
@@ -47,6 +59,16 @@ if ($_SERVER['REQUEST_METHOD'] == "GET")
 
 if ($_SERVER['REQUEST_METHOD'] == "POST")
 {
+    /*
+     * @param New - Adding new User to Database
+     * @param update - Update information of Existing user
+     * @name - Name of User
+     * @Email - Email id
+     * @Pass - Password
+     *
+     * @Srno - If Update flag is set, Srno is used for Updating user information
+     */
+
     if (isset($_POST['New']))
     {
         $name = $_POST['Name'];

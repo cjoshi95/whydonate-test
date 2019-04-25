@@ -1,4 +1,7 @@
 var app = angular.module('myApp', []);
+/*
+    Fetch User's Data from Databse and Display using angularJS methods
+ */
 app.controller('customersCtrl', function ($scope, $http)
 {
     $http.get("users.php")
@@ -10,7 +13,7 @@ app.controller('customersCtrl', function ($scope, $http)
 
 $(document).ready(function ()
 {
-
+    //Loading Selected User's Data into the 'Edit Form' For Editing and Updating purposes
     $("td a").on("click", function ()
     {
         $("#user_edit_form").hide();
@@ -36,6 +39,8 @@ $(document).ready(function ()
         $("#user_edit_form").fadeIn("slow");
     });
 
+
+    //On Update Button click, Send Update Request to REST with respective values
     $("#update").on("click", function ()
     {
         let uname = $("#uname").val();
@@ -59,6 +64,7 @@ $(document).ready(function ()
         )
     });
 
+    //On Button Click, Check if it's identity is to Delete and then perform delete operation
     $("button").on("click", function ()
     {
         if ($(this).attr("name") === "delete")
@@ -73,6 +79,7 @@ $(document).ready(function ()
         }
     });
 
+    //Adding new Record to the Database.. No Error handling is being done yet.
     $("#newrecord").on("click", function ()
     {
         if (confirm("Do you want to Insert Data?"))
