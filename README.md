@@ -8,3 +8,6 @@
 - Bootstrap (Css/JS Bundles)
   - [Boostrap CDN](https://www.bootstrapcdn.com/)
 - [MySQL Server](https://www.mysql.com/downloads/)
+
+## Database Schema
+-  The Database Structure and Sample Data is provided in file __dbstructure.sql__
