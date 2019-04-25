@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whydonate</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.0.min.js"
+            integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+            crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center mt-5">Customers Data</h2>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div ng-app="myApp" ng-controller="customersCtrl">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="x in names">
+                        <td><a href="#">{{ x.Srno }}</a></td>
+                        <td>{{ x.Name }}</td>
+                        <td>{{ x.Email }}</td>
+                        <td>{{ x.Password }}</td>
+                        <td>
+                            <button id="{{x.Srno}}" class="btn btn-danger" name="delete">X</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input id="newname" placeholder="New person Name" class="form-control newdata"></td>
+                        <td><input id="newmail" placeholder="New Person Email" class="form-control newdata"></td>
+                        <td><input id="newpass" placeholder="New Person Password" class="form-control newdata"></td>
+                        <td><input type="button" class="btn btn-success" id="newrecord" value="Add"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <h3>Click on one of the ID's above to update respective Data</h3>
+        <div class="col-md-12 mt-3">
+            <form action="" class="form-inline d-flex justify-content-around"
+                  id="user_edit_form">
+                <input class="form-control" type="text" name="srno" id="srno" hidden>
+                Name : <input class="form-control" type="text" name="uname" id="uname" placeholder="User's Name">
+                Email : <input class="form-control" type="text" name="uemail" id="uemail" placeholder="User's Email">
+                Password : <input class="form-control" type="text" name="upass" id="upass"
+                                  placeholder="User's Password">
+                <input type="button" class="btn btn-primary" value="Update" name="update" id="update">
+            </form>
+        </div>
+    </div>
+</div>
+<script src="scripts.js"></script>
+
+</body>
+</html>
